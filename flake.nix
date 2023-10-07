@@ -28,10 +28,10 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      # FIXME replace with your hostname
+      # Hostname
       rb15 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration file <
+        # Main nixos configuration file <
         modules = [./nixos/configuration.nix];
       };
     };

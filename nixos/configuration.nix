@@ -70,6 +70,8 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # Fix lid reopen hybernate issue
+  boot.kernelParams = [ "button.lid_init_state=open" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -165,6 +167,13 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  # Razer stuff
+  hardware.openrazer.enable = true;
+  environment.systemPackages = with pkgs; [
+      openrazer-daemon
+      polychromatic
+   ];
 
   # System-wide user settings (groups, etc)
   users.users = {
