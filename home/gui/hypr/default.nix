@@ -8,9 +8,6 @@
   home.packages = with pkgs; [ 
     kitty
   ];
-
-  # Disable desktop manager 
-  desktopManager.default = "none";
   
   wayland.windowManager.hyprland = {
     enable = true;
