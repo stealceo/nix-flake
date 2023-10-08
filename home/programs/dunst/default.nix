@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }: {
 
-{
-    home.file.".config/dunst/dunstrc".text = ''
+home.file.".config/dunst/dunstrc".text = ''
+
 [global]
     rounded = yes
     monitor = 0
@@ -71,6 +71,5 @@
     default_icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
 
     '';
-
 }
 
