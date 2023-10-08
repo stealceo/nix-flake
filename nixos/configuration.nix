@@ -16,8 +16,10 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    # Import your generated (nixos-generate-config) hardware configuration
-    
+    # Import home-manager's NixOS module
+    inputs.home-manager.nixosModules.home-manager
+     
+    # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
   
@@ -113,7 +115,7 @@
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
-    
+
     # Modesetting is required.
     modesetting.enable = true;
 
@@ -193,7 +195,6 @@
   };
   
   # Import home-manager's NixOS module
-  inputs.home-manager.nixosModules.home-manager
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
