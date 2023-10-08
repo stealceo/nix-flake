@@ -85,12 +85,10 @@
   
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Disable desktop manager 
-  desktopManager.default = "none";
-
+d
   # Configure keymap in X11
   services.xserver = {
+    desktopManager.default = "none";
     layout = "us,ru";
     xkbVariant = "";
   };
