@@ -85,7 +85,7 @@
   
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-d
+
   # Configure keymap in X11
   services.xserver = {
     desktopManager.default = "none";
