@@ -172,6 +172,7 @@
   # Razer stuff
   hardware.openrazer.enable = true;
   environment.systemPackages = with pkgs; [
+      home-manager
       openrazer-daemon
       polychromatic
    ];
