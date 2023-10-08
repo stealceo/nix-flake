@@ -14,7 +14,7 @@
   
   wayland.windowManager.hyprland = {
     enable = true;
-    xwayland.enable
+    xwayland.enable = true;
     enableNvidiaPatches = true;
     extraConfig = ''
 
