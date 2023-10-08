@@ -16,20 +16,10 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    # Import home-manager's NixOS module
-    inputs.home-manager.nixosModules.home-manager
-
     # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ../home/home-manager.nix
   ];
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      your-username = import ../home-manager/home.nix;
-    };
-  };
   
   nixpkgs = {
     # You can add overlays here
