@@ -1,5 +1,5 @@
 {
-  description = "Stealceo new nix config";
+  description = "Stealceo nix config";
 
   inputs = {
     # Nixpkgs
@@ -31,20 +31,8 @@
       # Hostname
       rb15 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # Main nixos configuration file <
+        # Main nixos configuration file
         modules = [./nixos/configuration.nix];
-      };
-    };
-
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      # Username@hostname
-      "stealceo@rb15" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        # Main home-manager configuration file
-        modules = [./home-manager/home.nix];
       };
     };
   };

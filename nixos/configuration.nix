@@ -113,7 +113,7 @@
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
-
+    
     # Modesetting is required.
     modesetting.enable = true;
 
@@ -191,6 +191,17 @@
       extraGroups = ["networkmanager" "wheel" "input"];
     };
   };
+  
+  # Import home-manager's NixOS module
+  inputs.home-manager.nixosModules.home-manager
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      stealceo = import ../home/home.nix;
+    };
+  };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
@@ -205,3 +216,4 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
 }
+
