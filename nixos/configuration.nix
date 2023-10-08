@@ -18,7 +18,7 @@
 
     # Import home-manager's NixOS module
     inputs.home-manager.nixosModules.home-manager
-     
+
     # Import generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
@@ -64,6 +64,14 @@
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 7d";
+    };
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      your-username = import ../home-manager/home.nix;
     };
   };
 
@@ -195,14 +203,6 @@
   };
   
   # Import home-manager's NixOS module
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      stealceo = import ../home/home.nix;
-    };
-  };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
