@@ -15,7 +15,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable
-    enableNvidiaPatches
+    enableNvidiaPatches = true;
     extraConfig = ''
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
