@@ -89,7 +89,6 @@
   # Configure keymap in X11
     layout = "us,ru";
     xkbVariant = "";
-  };
 
   # Enable OpenGL
   hardware.opengl = {
