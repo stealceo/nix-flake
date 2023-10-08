@@ -87,8 +87,6 @@
   services.xserver.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
-    desktopManager.default = "none";
     layout = "us,ru";
     xkbVariant = "";
   };
