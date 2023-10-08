@@ -6,7 +6,7 @@
   ];
 
   home.packages = with pkgs; [ 
-    
+    kitty
   ];
   
   wayland.windowManager.hyprland = {
@@ -30,7 +30,7 @@ monitor=,preferred,auto,auto
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
 # Execute your favorite apps at launch
-# exec-once = waybar & hyprpaper & firefox
+# exec-once = waybar & hyprpaper
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
@@ -120,7 +120,7 @@ gestures {
 
 misc {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
-    force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
+    force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers
 }
 
 # Example per-device config
@@ -143,7 +143,7 @@ $mainMod = SUPER
 bind = $mainMod, Q, exec, kitty
 bind = $mainMod, C, killactive,
 bind = $mainMod, M, exit,
-bind = $mainMod, E, exec, dolphin
+bind = $mainMod, E, exec, firefox
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, R, exec, wofi --show drun
 bind = $mainMod, P, pseudo, # dwindle
