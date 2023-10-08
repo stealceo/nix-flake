@@ -13,7 +13,7 @@
     # inputs.nix-colors.homeManagerModule
 
     # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+    ./gui
   ];
 
   nixpkgs = {
@@ -48,13 +48,11 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-  programs.zsh.enable = true;
-  programs.hyprland = {
-      enable = true;
-      xwayland = {
-        enable = true;
-    };
-  };
+  home.packages = with pkgs; [ 
+    firefox
+    gh
+  ];
+};
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
