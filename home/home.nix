@@ -51,7 +51,6 @@
   home.packages = with pkgs; [ 
     firefox
   ];
-};
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
